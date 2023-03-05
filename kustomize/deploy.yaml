@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: cr.amoylabs.com:30500/guuuuo/frontend:6
+        image: cr.amoylabs.com:30500/guuuuo/frontend:7
         ports:
         - name: http
           containerPort: 8080
