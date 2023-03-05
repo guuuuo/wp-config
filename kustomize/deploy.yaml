@@ -1,0 +1,23 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: frontend 
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+      version: v1
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  revisionHistoryLimit: 0
+  template:
+    metadata:
+      labels:
+        app: frontend
+        version: v1
+    spec:
+      containers:
+      - name: frontend
+        image: cr.amoylabs.com:30500/guuuuo/frontend:1
+        ports:
+        - name: http
+          containerPort: 8080
