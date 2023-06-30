@@ -1,4 +1,4 @@
-namespace: wordpress 
+namespace: wp 
 resources:
   - namespace.yaml
   - pvc.yaml
