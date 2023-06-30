@@ -1,21 +1,21 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: frontend 
+  name: wordpress 
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
-      - soybean.amoylabs.com
+      - wp.amoylabs.com
     secretName: tls-wildcard-amoylabs-com
   rules:
-    - host: soybean.amoylabs.com 
+    - host: wp.amoylabs.com 
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: frontend
+                name: wordpress
                 port:
                   number: 80
