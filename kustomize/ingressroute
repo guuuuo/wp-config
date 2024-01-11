@@ -1,0 +1,17 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata: 
+  name: wordpress
+  namespace: wp
+spec: 
+  entryPoints: 
+    - websecure
+  routes: 
+    - kind: Rule
+      match: Host(`wp.amoylabs.com`)
+      services: 
+        - name: wordpress
+          port: 80
+  tls:
+    secretName: default-cert
